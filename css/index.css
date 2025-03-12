@@ -1,0 +1,158 @@
+/* Define Color Variables */
+:root {
+  --white: #fff;
+  --dark-mauve: #7a5c58;
+  --muted-black: #595959;
+  --gentle-pinkish-white: #f8eef5;
+  --soft-light-peach: #fbece6;
+  --soft-deeper-peach: #f9e3dd;
+  --soft-blush-pink: #fbe1e5;
+  --deeper-pink: #fddbe0;
+  --pinkish-beige: #fdd7dc;
+  --blush-red: #ffd7dd;
+}
+
+/* General Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--gentle-pinkish-white);
+  font-family: "Poppins", sans-serif;
+  color: var(--muted-black);
+}
+
+h1,
+h2,
+.subtitle {
+  color: var(--dark-mauve);
+}
+
+h1 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 50px;
+  text-align: center;
+  padding: 120px 0 0 0;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 32px;
+  font-weight: 600;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 20px 0;
+}
+
+section {
+  max-width: 450px;
+  margin: 80px auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Header Section*/
+.header-container {
+  width: 100vw;
+  animation: changeHues 50s infinite ease-in-out;
+  background-size: 500% 500%;
+}
+
+.header-content {
+  text-align: left;
+}
+
+/* Experience Section */
+#experience ul li {
+  background-color: var(--white);
+  border-radius: 12px;
+  color: var(--dark-mauve);
+  font-weight: 500;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+/* Connect Section */
+/* note: preventing an underline to appear between the two icons: */
+#connect {
+  text-align: center;
+}
+
+#connect ul li {
+  display: inline;
+}
+
+#connect ul li a {
+  text-decoration: none;
+}
+
+.logo {
+  width: 40px;
+}
+
+/* Gradient animation for header-container*/
+/* https://www.w3schools.com/cssref/atrule_keyframes.php */
+@keyframes changeHues {
+  0% {
+    background: linear-gradient(
+      to bottom,
+      var(--soft-light-peach),
+      var(--gentle-pinkish-white)
+    );
+    background-position: 0% 0%;
+  }
+  20% {
+    background: linear-gradient(
+      to bottom,
+      var(--soft-deeper-peach),
+      var(--gentle-pinkish-white)
+    );
+    background-position: 20% 20%;
+  }
+  40% {
+    background: linear-gradient(
+      to bottom,
+      var(--soft-blush-pink),
+      var(--gentle-pinkish-white)
+    );
+    background-position: 40% 40%;
+  }
+  60% {
+    background: linear-gradient(
+      to bottom,
+      var(--deeper-pink),
+      var(--gentle-pinkish-white)
+    );
+    background-position: 60% 60%;
+  }
+  80% {
+    background: linear-gradient(
+      to bottom,
+      var(--pinkish-beige),
+      var(--gentle-pinkish-white)
+    );
+    background-position: 80% 80%;
+  }
+  100% {
+    background: linear-gradient(
+      to bottom,
+      var(--blush-red),
+      var(--gentle-pinkish-white)
+    );
+    background-position: 100% 100%;
+  }
+}

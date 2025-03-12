@@ -3,46 +3,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Import Google Font -->
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to CSS style sheet -->
+    <link rel="stylesheet" href="css/index.css" />
     <title>Christina Ligare's Portfolio</title>
   </head>
   <body>
-    <h1>Christina Ligare</h1>
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        Hi, I'm Christina, a US/Danish Front End Developer. I have a passion for
-        creating visually appealing and user-friendly solutions. I am organized,
-        dependable, and bring a warm and positive energy to every project.
-        Cultivating a culture of kindness is at the core of my collaborative
-        work style. I enjoy partnering with others to understand their needs,
-        ensuring that the end result exceeds expectations. The next simple and
-        effective solution could be yours!
-      </p>
-    </section>
-    <section id="experience">
-      <h2>Experience</h2>
-      <ul>
-        <li>HTML/CSS</li>
-        <li>JavaScript</li>
-        <li>Git/GitHub</li>
-        <li>React</li>
-        <li>Figma</li>
-      </ul>
-    </section>
-    <section id="connect">
-      <h2>Connect</h2>
-      <ul>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/christina-ligare/"
-            target="_blank"
-            >LinkedIn</a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/codercreative" target="_blank">GitHub</a>
-        </li>
-      </ul>
-    </section>
+    <header class="header-container">
+      <div class="header-content">
+        <h1>Christina Ligare</h1>
+        <p class="subtitle">Frontend Developer</p>
+      </div>
+    </header>
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          US/Danish Front End Developer based in the Bay Area and available for
+          remote-friendly full-time or part-time work.
+        </p>
+        <p>
+          After a pivotal shift from Management Assistant in healthcare to
+          Frontend Development, I've found my true calling.
+        </p>
+        <p>
+          Highly visual person, drawn to colors, design, and aesthetically
+          pleasing interfaces.
+        </p>
+        <p>
+          With a keen eye for detail and strong problem-solving skills, I’m
+          excited to create digital experiences that make an impact as part of a
+          dynamic team.
+        </p>
+      </section>
+      <section id="experience">
+        <h2>Experience</h2>
+        <ul>
+          <li>HTML/CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Git/GitHub</li>
+          <li>Figma</li>
+        </ul>
+      </section>
+      <section id="connect">
+        <h2>Connect</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/christina-ligare/"
+              target="_blank"
+              aria-label="visit LinkedIn"
+            >
+              <img class="logo" src="images/linkedin.svg" alt="LinkedIn logo" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/codercreative"
+              target="_blank"
+              aria-label="visit GitHub"
+            >
+              <img class="logo" src="images/github.svg" alt="GitHub logo" />
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
   </body>
 </html>
