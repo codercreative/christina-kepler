@@ -3,20 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Import Google Font -->
-    <!-- Poppins -->
+
+    <!-- Poppins Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <!-- Quicksand -->
+    <!-- Quicksand Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
+    />
+
+    <!-- Font Awesome Content Delivery Network CDNJS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <!-- Link to CSS style sheet -->
     <link rel="stylesheet" href="css/index.css" />
@@ -24,9 +30,27 @@
   </head>
   <body>
     <header class="header-container">
+      <nav class="nav-container">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#connect">Connect</a></li>
+        </ul>
+      </nav>
+
       <div class="header-content">
         <h1>Christina Ligare</h1>
-        <p class="subtitle">Frontend Developer</p>
+        <!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role -->
+        <div class="subtitle" role="heading" aria-level="2">
+          Frontend Developer
+        </div>
+        <img
+          class="art-portrait"
+          src="images/coder-art-2.webp"
+          alt="Illustration of woman with coding languages in her hair"
+        />
       </div>
     </header>
     <main>
@@ -50,38 +74,92 @@
           dynamic team.
         </p>
       </section>
+
       <section id="experience">
         <h2>Experience</h2>
-        <ul>
-          <li>HTML/CSS</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Git/GitHub</li>
-          <li>Figma</li>
-        </ul>
+        <div class="job">
+          <div class="title-year">
+            <h3>Frontend Developer</h3>
+            <span>2020 - Present</span>
+          </div>
+          <h4>Home</h4>
+          <p>
+            Enrolled in
+            <a href="https://codethedream.org/" target="_blank"
+              >Code the Dream</a
+            >'s Front-End Development program to further enhance my skills after
+            completing a 6-week
+            <a href="https://www.chingu.io/" target="_blank">Chingu</a> Voyage
+          </p>
+          <p>
+            Studied frontend development at
+            <a href="https://scrimba.com/home" target="_blank">Scrimba</a> and
+            <a href="https://skillcrush.com/" target="_blank">Skillcrush</a>
+          </p>
+
+          <p>Transitioned into tech after a 1-year sabbatical</p>
+        </div>
+        <div class="job">
+          <div class="title-year">
+            <h3>Management Assistant</h3>
+            <span>2001 - 2019</span>
+          </div>
+          <h4>
+            <a
+              href="https://about.kaiserpermanente.org/who-we-are/fast-facts"
+              target="_blank"
+              >Kaiser Permanente, Bay Area</a
+            >
+          </h4>
+          <p>
+            Reported directly to the Northern California (NCAL) Regional
+            Continuum Administrator for Home Health and Hospice (HH/H)
+            overseeing 700+ staff in NCAL HH/H
+          </p>
+        </div>
+        <div class="job">
+          <div class="title-year">
+            <h3>Executive Assistant</h3>
+            <span>1998 - 2001</span>
+          </div>
+          <h4>
+            <a href="https://www.nnit.com/about-us/" target="_blank"
+              >nnit, Denmark</a
+            >
+          </h4>
+          <p>Executive Assistant to the Senior VP of 500+ employees</p>
+        </div>
       </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <!-- Will use JavaScript here to insert a list of my skills -->
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <!-- adding GitHub projects to the ul here via API call and JavaScript -->
+        <ul></ul>
+      </section>
+
       <section id="connect">
         <h2>Connect</h2>
-        <ul>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/christina-ligare/"
-              target="_blank"
-              aria-label="visit LinkedIn"
-            >
-              <img class="logo" src="images/linkedin.svg" alt="LinkedIn logo" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/codercreative"
-              target="_blank"
-              aria-label="visit GitHub"
-            >
-              <img class="logo" src="images/github.svg" alt="GitHub logo" />
-            </a>
-          </li>
-        </ul>
+        <div class="social-icons">
+          <a
+            href="https://www.linkedin.com/in/christina-ligare/"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin linkedin-icon"></i>
+          </a>
+          <a
+            href="https://github.com/codercreative"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github github-icon"></i>
+          </a>
+        </div>
       </section>
     </main>
   </body>

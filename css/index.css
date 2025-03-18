@@ -1,32 +1,73 @@
-/* Define Color Variables */
+/*  -------- 
+Define Color Variables  
+-------- */
 :root {
   --white: #fff;
   --dark-mauve: #7a5c58;
   --muted-black: #595959;
-  --gentle-pinkish-white: #f8eef5;
-  --soft-light-peach: #fbece6;
-  --soft-deeper-peach: #f9e3dd;
-  --soft-blush-pink: #fbe1e5;
-  --deeper-pink: #fddbe0;
-  --pinkish-beige: #fdd7dc;
-  --blush-red: #ffd7dd;
+  /* orange color that serves as base for transition:font-size: ;*/
+  --orange: #e67e22;
+  /* From https://www.colorhexa.com/e67e22 */
+  --almost-white: #fef9f5;
+  --orange-tone-1: #fcefe4;
+  --orange-tone-2: #fae5d2;
+  --orange-tone-3: #f8dbc1;
+  --orange-tone-4: #f6d0af;
+  --orange-tone-5: #f4c69d;
+  --orange-tone-6: #f2bc8c;
 }
 
-/* General Styles */
+/* -------- 
+General Styles 
+-------- */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+html {
+  /* Adds smooth scrolling for a more user-friendly experience, so users can see where the page is moving */
+  scroll-behavior: smooth;
+  /*scroll-padding-top keeps the page from jumping too far when clicking links – adjusts for the header */
+  /* https://www.w3schools.com/cssref/css_pr_scroll-padding-top.php */
+  scroll-padding-top: 850px;
+}
+
 body {
-  background-color: var(--gentle-pinkish-white);
+  background-color: var(--almost-white);
   font-family: "Poppins", sans-serif;
   color: var(--muted-black);
 }
 
+section {
+  max-width: 450px;
+  margin: 80px auto;
+}
+
+section:last-child {
+  margin-bottom: 300px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+}
+
+/*  -------- 
+Typography  
+--------*/
+
 h1,
 h2,
+h3,
+h4,
 .subtitle {
   color: var(--dark-mauve);
 }
@@ -42,67 +83,135 @@ h1 {
   margin-top: 8px;
   font-size: 32px;
   font-weight: 600;
-  padding-bottom: 80px;
   text-align: center;
+  padding-bottom: 40px;
 }
 
 h2 {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 p {
   margin: 20px 0;
 }
 
-section {
-  max-width: 450px;
-  margin: 80px auto;
-}
-
-ul {
-  list-style-type: none;
-}
-
-/* Header Section*/
+/*  -------- 
+Header Section 
+--------*/
 .header-container {
   width: 100vw;
   animation: changeHues 50s infinite ease-in-out;
   background-size: 500% 500%;
+  /* https://www.w3schools.com/HOWTO/howto_js_sticky_header.asp */
+  position: sticky;
+  top: 0;
 }
 
 .header-content {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Experience Section */
-#experience ul li {
-  background-color: var(--white);
-  border-radius: 12px;
-  color: var(--dark-mauve);
-  font-weight: 500;
-  margin: 20px 0;
-  padding: 20px;
+/*  -------- 
+Nav Bar 
+--------*/
+.nav-container {
+  padding: 40px;
 }
 
-/* Connect Section */
-/* note: preventing an underline to appear between the two icons: */
-#connect {
-  text-align: center;
+.nav-list {
+  display: flex;
+  justify-content: flex-end;
 }
 
-#connect ul li {
-  display: inline;
+.nav-list li {
+  margin-left: 16px;
+  font-size: 20px;
 }
 
-#connect ul li a {
+.nav-list li a {
   text-decoration: none;
+  color: var(--muted-black);
+  font-weight: 600;
 }
 
-.logo {
-  width: 40px;
+.nav-list li a:hover {
+  color: var(--orange);
 }
+
+.art-portrait {
+  width: 400px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+/*  -------- 
+Experience Section 
+--------*/
+
+#experience span {
+  color: var(--dark-mauve);
+}
+
+.job {
+  background-color: var(--white);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 20px;
+}
+
+.title-year {
+  display: flex;
+  justify-content: space-between;
+}
+
+#experience a:hover {
+  color: var(--orange);
+}
+
+/*  -------- 
+Skills Section 
+--------*/
+/* styling will be inserted later for the Skills section */
+/*  -------- 
+Projects Section  
+--------*/
+/* styling will be inserted later for the Projects section */
+
+/*  -------- 
+Connect Section  
+--------*/
+
+#connect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.social-icons {
+  display: flex;
+  width: 120px;
+  justify-content: space-between;
+}
+
+.linkedin-icon,
+.github-icon {
+  /* note have to use font-size instead of width */
+  font-size: 50px;
+  color: var(--dark-mauve);
+  transition: all 0.3s ease-in-out;
+}
+
+.linkedin-icon:hover,
+.github-icon:hover {
+  color: var(--orange);
+}
+
+/* -------- 
+Keyframes 
+-------- */
 
 /* Gradient animation for header-container*/
 /* https://www.w3schools.com/cssref/atrule_keyframes.php */
@@ -110,48 +219,48 @@ ul {
   0% {
     background: linear-gradient(
       to bottom,
-      var(--soft-light-peach),
-      var(--gentle-pinkish-white)
+      var(--orange-tone-3),
+      var(--almost-white)
     );
     background-position: 0% 0%;
   }
   20% {
     background: linear-gradient(
       to bottom,
-      var(--soft-deeper-peach),
-      var(--gentle-pinkish-white)
+      var(--orange-tone-4),
+      var(--almost-white)
     );
     background-position: 20% 20%;
   }
   40% {
     background: linear-gradient(
       to bottom,
-      var(--soft-blush-pink),
-      var(--gentle-pinkish-white)
+      var(--orange-tone-3),
+      var(--almost-white)
     );
     background-position: 40% 40%;
   }
   60% {
     background: linear-gradient(
       to bottom,
-      var(--deeper-pink),
-      var(--gentle-pinkish-white)
+      var(--orange-tone-5),
+      var(--almost-white)
     );
     background-position: 60% 60%;
   }
   80% {
     background: linear-gradient(
       to bottom,
-      var(--pinkish-beige),
-      var(--gentle-pinkish-white)
+      var(--orange-tone-4),
+      var(--almost-white)
     );
     background-position: 80% 80%;
   }
   100% {
     background: linear-gradient(
       to bottom,
-      var(--blush-red),
-      var(--gentle-pinkish-white)
+      var(--orange-tone-5),
+      var(--almost-white)
     );
     background-position: 100% 100%;
   }
