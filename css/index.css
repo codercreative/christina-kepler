@@ -104,9 +104,7 @@ Header Section
   width: 100vw;
   animation: changeHues 50s infinite ease-in-out;
   background-size: 500% 500%;
-  /* https://www.w3schools.com/HOWTO/howto_js_sticky_header.asp */
-  position: sticky;
-  top: 0;
+  /* removed position sticky to be able to view page properly. I am resubmitting my lesson-9 to reviewer for approval on 24 March */
 }
 
 .header-content {
