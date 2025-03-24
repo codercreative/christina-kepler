@@ -30,137 +30,141 @@
   </head>
   <body>
     <header class="header-container">
-      <nav class="nav-container">
-        <ul class="nav-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#connect">Connect</a></li>
-        </ul>
-      </nav>
+      <div class="container">
+        <nav class="nav-container">
+          <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#connect">Connect</a></li>
+          </ul>
+        </nav>
 
-      <div class="header-content">
-        <h1>Christina Ligare</h1>
-        <!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role -->
-        <div class="subtitle" role="heading" aria-level="2">
-          Frontend Developer
+        <div class="header-content">
+          <h1>Christina Ligare</h1>
+          <!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role -->
+          <div class="subtitle" role="heading" aria-level="2">
+            Frontend Developer
+          </div>
+          <img
+            class="art-portrait"
+            src="images/splash-illustration.webp"
+            alt="Illustration of woman with coding languages in her hair"
+          />
         </div>
-        <img
-          class="art-portrait"
-          src="images/coder-art-2.webp"
-          alt="Illustration of woman with coding languages in her hair"
-        />
       </div>
     </header>
     <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>
-          US/Danish Front End Developer based in the Bay Area and available for
-          remote-friendly full-time or part-time work.
-        </p>
-        <p>
-          After a pivotal shift from Management Assistant in healthcare to
-          Frontend Development, I've found my true calling.
-        </p>
-        <p>
-          Highly visual person, drawn to colors, design, and aesthetically
-          pleasing interfaces.
-        </p>
-        <p>
-          With a keen eye for detail and strong problem-solving skills, I’m
-          excited to create digital experiences that make an impact as part of a
-          dynamic team.
-        </p>
-      </section>
-
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="job">
-          <div class="title-year">
-            <h3>Frontend Developer</h3>
-            <span>2020 - Present</span>
-          </div>
-          <h4>Home</h4>
+      <div class="container">
+        <section id="about">
+          <h2>About</h2>
           <p>
-            Enrolled in
-            <a href="https://codethedream.org/" target="_blank"
-              >Code the Dream</a
-            >'s Front-End Development program to further enhance my skills after
-            completing a 6-week
-            <a href="https://www.chingu.io/" target="_blank">Chingu</a> Voyage
+            US/Danish Front End Developer based in the Bay Area and available
+            for remote-friendly full-time or part-time work.
           </p>
           <p>
-            Studied frontend development at
-            <a href="https://scrimba.com/home" target="_blank">Scrimba</a> and
-            <a href="https://skillcrush.com/" target="_blank">Skillcrush</a>
+            After a pivotal shift from Management Assistant in healthcare to
+            Frontend Development, I've found my true calling.
           </p>
+          <p>
+            Highly visual person, drawn to colors, design, and aesthetically
+            pleasing interfaces.
+          </p>
+          <p>
+            With a keen eye for detail and strong problem-solving skills, I’m
+            excited to create digital experiences that make an impact as part of
+            a dynamic team.
+          </p>
+        </section>
 
-          <p>Transitioned into tech after a 1-year sabbatical</p>
-        </div>
-        <div class="job">
-          <div class="title-year">
-            <h3>Management Assistant</h3>
-            <span>2001 - 2019</span>
+        <section id="experience">
+          <h2>Experience</h2>
+          <div class="job">
+            <div class="title-year">
+              <h3>Frontend Developer</h3>
+              <span>2020 - Present</span>
+            </div>
+            <h4>Home</h4>
+            <p>
+              Enrolled in
+              <a href="https://codethedream.org/" target="_blank"
+                >Code the Dream</a
+              >'s Front-End Development program to further enhance my skills
+              after completing a 6-week
+              <a href="https://www.chingu.io/" target="_blank">Chingu</a> Voyage
+            </p>
+            <p>
+              Studied frontend development at
+              <a href="https://scrimba.com/home" target="_blank">Scrimba</a> and
+              <a href="https://skillcrush.com/" target="_blank">Skillcrush</a>
+            </p>
+
+            <p>Transitioned into tech after a 1-year sabbatical</p>
           </div>
-          <h4>
+          <div class="job">
+            <div class="title-year">
+              <h3>Management Assistant</h3>
+              <span>2001 - 2019</span>
+            </div>
+            <h4>
+              <a
+                href="https://about.kaiserpermanente.org/who-we-are/fast-facts"
+                target="_blank"
+                >Kaiser Permanente, Bay Area</a
+              >
+            </h4>
+            <p>
+              Reported directly to the Northern California (NCAL) Regional
+              Continuum Administrator for Home Health and Hospice (HH/H)
+              overseeing 700+ staff in NCAL HH/H
+            </p>
+          </div>
+          <div class="job">
+            <div class="title-year">
+              <h3>Executive Assistant</h3>
+              <span>1998 - 2001</span>
+            </div>
+            <h4>
+              <a href="https://www.nnit.com/about-us/" target="_blank"
+                >nnit, Denmark</a
+              >
+            </h4>
+            <p>Executive Assistant to the Senior VP of 500+ employees</p>
+          </div>
+        </section>
+
+        <section id="skills">
+          <h2>Skills</h2>
+          <!-- Will use JavaScript here to insert a list of my skills -->
+        </section>
+
+        <section id="projects">
+          <h2>Projects</h2>
+          <!-- adding GitHub projects to the ul here via API call and JavaScript -->
+          <ul></ul>
+        </section>
+
+        <section id="connect">
+          <h2>Connect</h2>
+          <div class="social-icons">
             <a
-              href="https://about.kaiserpermanente.org/who-we-are/fast-facts"
+              href="https://www.linkedin.com/in/christina-ligare/"
               target="_blank"
-              >Kaiser Permanente, Bay Area</a
+              aria-label="LinkedIn"
             >
-          </h4>
-          <p>
-            Reported directly to the Northern California (NCAL) Regional
-            Continuum Administrator for Home Health and Hospice (HH/H)
-            overseeing 700+ staff in NCAL HH/H
-          </p>
-        </div>
-        <div class="job">
-          <div class="title-year">
-            <h3>Executive Assistant</h3>
-            <span>1998 - 2001</span>
+              <i class="fab fa-linkedin linkedin-icon"></i>
+            </a>
+            <a
+              href="https://github.com/codercreative"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github github-icon"></i>
+            </a>
           </div>
-          <h4>
-            <a href="https://www.nnit.com/about-us/" target="_blank"
-              >nnit, Denmark</a
-            >
-          </h4>
-          <p>Executive Assistant to the Senior VP of 500+ employees</p>
-        </div>
-      </section>
-
-      <section id="skills">
-        <h2>Skills</h2>
-        <!-- Will use JavaScript here to insert a list of my skills -->
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-        <!-- adding GitHub projects to the ul here via API call and JavaScript -->
-        <ul></ul>
-      </section>
-
-      <section id="connect">
-        <h2>Connect</h2>
-        <div class="social-icons">
-          <a
-            href="https://www.linkedin.com/in/christina-ligare/"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin linkedin-icon"></i>
-          </a>
-          <a
-            href="https://github.com/codercreative"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github github-icon"></i>
-          </a>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   </body>
 </html>
