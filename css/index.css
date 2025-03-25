@@ -1,3 +1,5 @@
+/* Mobile-first design approach. Media queries for tablet and laptop/desktop are located at the bottom, between mobile styles and keyframes. */
+
 /*  -------- 
 Define Color Variables  
 -------- */
