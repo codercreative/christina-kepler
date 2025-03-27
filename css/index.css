@@ -1,3 +1,5 @@
+/* Mobile-first design approach. Media queries for tablet and laptop/desktop are located at the bottom, between mobile styles and keyframes. */
+
 /*  -------- 
 Define Color Variables  
 -------- */
@@ -5,16 +7,12 @@ Define Color Variables
   --white: #fff;
   --dark-mauve: #7a5c58;
   --muted-black: #595959;
-  /* orange color that serves as base for transition:font-size: ;*/
+  /* below color serves as base for site ;*/
   --orange: #e67e22;
-  /* From https://www.colorhexa.com/e67e22 */
+  /* From https://www.colorhexa.com/e67e22 -- originally -- but chose my own hues*/
   --almost-white: #fef9f5;
   --orange-tone-1: #fcefe4;
-  --orange-tone-2: #fae5d2;
-  --orange-tone-3: #f8dbc1;
-  --orange-tone-4: #f6d0af;
-  --orange-tone-5: #f4c69d;
-  --orange-tone-6: #f2bc8c;
+  --orange-tone-2: #ffebdb;
 }
 
 /* -------- 
@@ -29,9 +27,13 @@ General Styles
 html {
   /* Adds smooth scrolling for a more user-friendly experience, so users can see where the page is moving */
   scroll-behavior: smooth;
-  /*scroll-padding-top keeps the page from jumping too far when clicking links – adjusts for the header */
+  /*scroll-padding-top where the user lands to view the section header when clicking on nav links */
   /* https://www.w3schools.com/cssref/css_pr_scroll-padding-top.php */
-  scroll-padding-top: 850px;
+  scroll-padding-top: 1em;
+}
+
+main {
+  padding-bottom: 20em;
 }
 
 body {
@@ -40,13 +42,15 @@ body {
   color: var(--muted-black);
 }
 
-section {
-  max-width: 450px;
-  margin: 80px auto;
+.container {
+  width: 90%;
+  margin: 0 auto;
 }
 
-section:last-child {
-  margin-bottom: 300px;
+section {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 0 0 2.4em 0;
 }
 
 ul {
@@ -54,7 +58,6 @@ ul {
 }
 
 a {
-  color: inherit;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease-in;
@@ -63,7 +66,6 @@ a {
 /*  -------- 
 Typography  
 --------*/
-
 h1,
 h2,
 h3,
@@ -74,37 +76,36 @@ h4,
 
 h1 {
   font-family: "Quicksand", sans-serif;
-  font-size: 50px;
+  font-size: 2rem;
   text-align: center;
-  padding: 120px 0 0 0;
+  padding: 2.4em 0 0 0;
 }
 
 .subtitle {
-  margin-top: 8px;
-  font-size: 32px;
+  margin-top: 6px;
+  font-size: 1.3rem;
   font-weight: 600;
   text-align: center;
-  padding-bottom: 40px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 1.2em;
 }
 
 p {
-  margin: 20px 0;
+  font-size: 0.9rem;
+  margin: 1.25em 0;
 }
 
 /*  -------- 
 Header Section 
 --------*/
+/* Creating a very subtle hue change effect at top of page: */
 .header-container {
-  width: 100vw;
-  animation: changeHues 50s infinite ease-in-out;
-  background-size: 500% 500%;
-  /* removed position sticky to be able to view page properly. I am resubmitting my lesson-9 to reviewer for approval on 24 March */
+  animation: changeHues 100s infinite ease-in-out;
+  background-size: 1500% 1500%;
 }
 
 .header-content {
@@ -117,33 +118,37 @@ Header Section
 Nav Bar 
 --------*/
 .nav-container {
-  padding: 40px;
+  padding-top: 2.5em;
 }
 
 .nav-list {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
 }
 
 .nav-list li {
-  margin-left: 16px;
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 .nav-list li a {
   text-decoration: none;
-  color: var(--muted-black);
+  color: var(--dark-mauve);
   font-weight: 600;
 }
 
 .nav-list li a:hover {
   color: var(--orange);
+  border-bottom: 2px solid var(--orange);
 }
 
 .art-portrait {
-  width: 400px;
+  width: 100%;
+  max-width: 450px;
   border-radius: 50%;
   object-fit: contain;
+  padding: 3em 0;
 }
 
 /*  -------- 
@@ -151,29 +156,44 @@ Experience Section
 --------*/
 
 #experience span {
+  font-size: 0.9rem;
   color: var(--dark-mauve);
 }
 
 .job {
   background-color: var(--white);
-  padding: 20px;
-  margin: 20px 0;
+  padding: 1em;
+  margin: 1em 0;
   border-radius: 20px;
 }
 
 .title-year {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
+
+#experience a {
+  color: var(--dark-mauve);
 }
 
 #experience a:hover {
   color: var(--orange);
+  border-bottom: 1px solid var(--orange);
+}
+
+#experience a:focus,
+#experience a:active {
+  color: var(--muted-black);
+  border-bottom: none;
+  opacity: 0.7;
 }
 
 /*  -------- 
 Skills Section 
 --------*/
 /* styling will be inserted later for the Skills section */
+
 /*  -------- 
 Projects Section  
 --------*/
@@ -190,21 +210,134 @@ Connect Section
 }
 .social-icons {
   display: flex;
-  width: 120px;
+  width: 5em;
   justify-content: space-between;
 }
 
 .linkedin-icon,
 .github-icon {
   /* note have to use font-size instead of width */
-  font-size: 50px;
+  font-size: 2em;
   color: var(--dark-mauve);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in;
 }
 
 .linkedin-icon:hover,
 .github-icon:hover {
   color: var(--orange);
+}
+
+/* -------- 
+Media Queries
+-------- */
+
+/* Tablets */
+@media (min-width: 767px) {
+  /* Typography */
+  h1 {
+    font-size: 2.6rem;
+    color: var(--orange);
+  }
+
+  .subtitle {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: var(--orange);
+    filter: contrast(101%);
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* Nav Bar */
+  .nav-list {
+    gap: 0.9em;
+  }
+
+  .nav-list li {
+    font-size: 1.1rem;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  /* Experience Section */
+  .title-year {
+    flex-direction: row;
+  }
+
+  #experience span {
+    font-size: 1.1rem;
+  }
+
+  /* Connect Section */
+  .social-icons {
+    width: 110px;
+  }
+
+  .linkedin-icon,
+  .github-icon {
+    font-size: 2.4em;
+  }
+}
+
+/* Laptops/Desktops */
+@media (min-width: 1024px) {
+  /* General Styles */
+  section {
+    max-width: 600px;
+    animation: fade-in 20s ease-in forwards;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    text-align: left;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  /* Header Section */
+  .header-content {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  .title-container {
+    order: 2;
+  }
+
+  .social-icons {
+    width: 140px;
+  }
+
+  .art-portrait {
+    padding: 5em 0;
+    order: 1;
+  }
+
+  /* Connect Section */
+  .linkedin-icon,
+  .github-icon {
+    font-size: 2.8em;
+  }
 }
 
 /* -------- 
@@ -217,7 +350,7 @@ Keyframes
   0% {
     background: linear-gradient(
       to bottom,
-      var(--orange-tone-3),
+      var(--orange-tone-1),
       var(--almost-white)
     );
     background-position: 0% 0%;
@@ -225,7 +358,7 @@ Keyframes
   20% {
     background: linear-gradient(
       to bottom,
-      var(--orange-tone-4),
+      var(--orange-tone-2),
       var(--almost-white)
     );
     background-position: 20% 20%;
@@ -233,7 +366,7 @@ Keyframes
   40% {
     background: linear-gradient(
       to bottom,
-      var(--orange-tone-3),
+      var(--orange-tone-1),
       var(--almost-white)
     );
     background-position: 40% 40%;
@@ -241,7 +374,7 @@ Keyframes
   60% {
     background: linear-gradient(
       to bottom,
-      var(--orange-tone-5),
+      var(--orange-tone-2),
       var(--almost-white)
     );
     background-position: 60% 60%;
@@ -249,7 +382,7 @@ Keyframes
   80% {
     background: linear-gradient(
       to bottom,
-      var(--orange-tone-4),
+      var(--orange-tone-1),
       var(--almost-white)
     );
     background-position: 80% 80%;
@@ -257,9 +390,22 @@ Keyframes
   100% {
     background: linear-gradient(
       to bottom,
-      var(--orange-tone-5),
+      var(--orange-tone-2),
       var(--almost-white)
     );
     background-position: 100% 100%;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
