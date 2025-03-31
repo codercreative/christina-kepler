@@ -33,7 +33,7 @@ html {
 }
 
 main {
-  padding-bottom: 20em;
+  padding-bottom: 2em;
 }
 
 body {
@@ -50,7 +50,7 @@ body {
 section {
   max-width: 450px;
   margin: 0 auto;
-  padding: 0 0 2.4em 0;
+  padding: 0 0 3em 0;
 }
 
 ul {
@@ -89,9 +89,17 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 600;
   margin-bottom: 1.2em;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+h4 {
+  font-size: 1rem;
 }
 
 p {
@@ -148,7 +156,7 @@ Nav Bar
   max-width: 450px;
   border-radius: 50%;
   object-fit: contain;
-  padding: 3em 0;
+  padding: 4em 0;
 }
 
 /*  -------- 
@@ -190,14 +198,61 @@ Experience Section
 }
 
 /*  -------- 
-Skills Section 
---------*/
-/* styling will be inserted later for the Skills section */
-
-/*  -------- 
 Projects Section  
 --------*/
 /* styling will be inserted later for the Projects section */
+
+/*  -------- 
+Skills Section 
+--------*/
+.skills h2 {
+  text-align: center;
+}
+
+.skills ul {
+  background-color: var(--white);
+  padding: 0.8em;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1rem;
+  gap: 0.4em;
+}
+
+/* Skills border animation start */
+
+/* CSS border animation on YouTube channel:  Coding2GO: https://www.youtube.com/watch?v=ezP4kbOvs_E */
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.skills ul::after,
+.skills ul::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), transparent 50%, #ffebdb);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  padding: 2px;
+  border-radius: 10px;
+  z-index: -1;
+  /* See keyframes spin at bottom of page */
+  animation: 3s spin linear infinite;
+}
+
+.skills ul::before {
+  filter: blur(1.3rem);
+  opacity: 0.3;
+}
+/* Skills border animation end */
 
 /*  -------- 
 Connect Section  
@@ -227,6 +282,16 @@ Connect Section
   color: var(--orange);
 }
 
+/*  -------- 
+Footer  
+--------*/
+footer {
+  padding: 2em 0;
+  background-color: var(--dark-mauve);
+  color: var(--white);
+  text-align: center;
+}
+
 /* -------- 
 Media Queries
 -------- */
@@ -244,9 +309,17 @@ Media Queries
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: var(--orange);
     filter: contrast(101%);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
   }
 
   p {
@@ -276,6 +349,16 @@ Media Queries
     font-size: 1.1rem;
   }
 
+  /* Skills Section */
+
+  .skills ul {
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--dark-mauve);
+    font-weight: 600;
+    padding: 2em;
+  }
+
   /* Connect Section */
   .social-icons {
     width: 110px;
@@ -288,7 +371,7 @@ Media Queries
 }
 
 /* Laptops/Desktops */
-@media (min-width: 1024px) {
+@media (min-width: 1023px) {
   /* General Styles */
   section {
     max-width: 600px;
@@ -298,14 +381,24 @@ Media Queries
   /* Typography */
   h1 {
     font-size: 2.8rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
+    padding: 0;
   }
 
   .subtitle {
+    font-size: 1.7rem;
     text-align: left;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
   }
 
   p {
@@ -401,11 +494,20 @@ Keyframes
   0% {
     opacity: 0;
   }
-  10% {
+  20% {
     opacity: 0.9;
   }
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
   }
 }
