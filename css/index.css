@@ -50,7 +50,7 @@ body {
 section {
   max-width: 450px;
   margin: 0 auto;
-  padding: 0 0 3em 0;
+  padding-bottom: 3em;
 }
 
 ul {
@@ -60,7 +60,7 @@ ul {
 a {
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease;
 }
 
 /*  -------- 
@@ -91,7 +91,7 @@ h1 {
 h2 {
   font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 1.2em;
+  margin-bottom: 1em;
 }
 
 h3 {
@@ -149,6 +149,11 @@ Nav Bar
 .nav-list li a:hover {
   color: var(--orange);
   border-bottom: 2px solid var(--orange);
+}
+
+.paper-plane-icon {
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .art-portrait {
@@ -274,12 +279,108 @@ Connect Section
   /* note have to use font-size instead of width */
   font-size: 2em;
   color: var(--dark-mauve);
-  transition: all 0.3s ease-in;
 }
 
 .linkedin-icon:hover,
 .github-icon:hover {
   color: var(--orange);
+}
+
+/*  -------- 
+Leave a Message Section
+--------*/
+#message-form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.leave-message {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 6px;
+  font-size: inherit;
+  font-family: inherit;
+  margin-bottom: 10px;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: var(--orange);
+  border-radius: 5px;
+  padding: 10px 0;
+  cursor: pointer;
+  color: var(--white);
+  filter: contrast(110%);
+  font-size: 1.1rem;
+  font-family: inherit;
+  border: 2px solid transparent;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  border: 2px solid var(--dark-mauve);
+  background-color: var(--dark-mauve);
+  color: var(--almost-white);
+  opacity: 0.9;
+}
+
+/*  -------- 
+Messages Section (displaying messages from users)
+--------*/
+
+.hidden {
+  display: none;
+}
+
+.message-ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: var(--almost-white);
+}
+
+.user-msg-li {
+  width: 100%;
+  border: 1px solid var(--dark-mauve);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.user-email {
+  display: block;
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+.user-msg {
+  display: block;
+  /* word-wrap: break-word key to fixing the overflow */
+  word-wrap: break-word;
+  margin-bottom: 15px;
+}
+
+.remove-btn {
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--orange);
+  padding: 5px 0;
+  cursor: pointer;
+  color: var(--white);
+  filter: contrast(110%);
+  font-family: inherit;
+  border: 2px solid transparent;
+}
+
+.remove-btn:hover,
+.remove-btn:focus {
+  background-color: var(--dark-mauve);
+  opacity: 0.9;
 }
 
 /*  -------- 
@@ -368,6 +469,34 @@ Media Queries
   .github-icon {
     font-size: 2.4em;
   }
+
+  /*  -------- 
+Messages Section (displaying messages from users)
+--------*/
+
+  .user-msg-li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 80%;
+  }
+
+  .user-email,
+  .user-msg {
+    margin-bottom: 0;
+  }
+
+  .remove-btn {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+  }
 }
 
 /* Laptops/Desktops */
@@ -375,7 +504,7 @@ Media Queries
   /* General Styles */
   section {
     max-width: 600px;
-    animation: fade-in 20s ease-in forwards;
+    /* animation: fade-in 20s ease-in forwards; */
   }
 
   /* Typography */
@@ -490,7 +619,7 @@ Keyframes
   }
 }
 
-@keyframes fade-in {
+/* @keyframes fade-in {
   0% {
     opacity: 0;
   }
@@ -501,7 +630,7 @@ Keyframes
   100% {
     opacity: 1;
   }
-}
+} */
 
 @keyframes spin {
   from {

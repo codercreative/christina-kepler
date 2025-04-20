@@ -38,6 +38,11 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#connect">Connect</a></li>
+            <li>
+              <a href="#message-form-section" aria-label="Go to message section"
+                ><i class="fa-solid fa-paper-plane paper-plane-icon"></i
+              ></a>
+            </li>
           </ul>
         </nav>
 
@@ -166,6 +171,53 @@
               <i class="fab fa-github github-icon"></i>
             </a>
           </div>
+        </section>
+
+        <section id="message-form-section">
+          <h2>Leave a Message</h2>
+          <!-- Coding2Go youtube video about forms for reference: https://www.youtube.com/watch?v=bVl5_UdcAy0 -->
+          <form class="leave-message" name="leave_message">
+            <label for="usersName">Name</label>
+            <input
+              id="usersName"
+              class="input"
+              type="text"
+              name="usersName"
+              placeholder="Jane Doe"
+              aria-label="Enter your full name"
+              required
+            />
+            <br />
+            <label for="usersEmail">Email</label>
+            <input
+              id="usersEmail"
+              class="input"
+              type="email"
+              name="usersEmail"
+              placeholder="name@email.com"
+              aria-label="Enter your email"
+              required
+            />
+            <br />
+            <label for="usersMessage">Message</label>
+            <textarea
+              id="usersMessage"
+              class="input"
+              name="usersMessage"
+              id=""
+              placeholder="We are interested in discussing an exciting role with you!..."
+              aria-label="Send me your message"
+              required
+            ></textarea>
+            <br />
+            <button class="submit-btn" type="submit">Submit</button>
+          </form>
+        </section>
+        <section id="messages" class="hidden">
+          <h2>Messages</h2>
+          <ul>
+            <!-- section with received messages dynamically inserted with JavaScript -->
+          </ul>
         </section>
       </div>
     </main>
