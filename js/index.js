@@ -19,8 +19,66 @@ for (let i = 0; i < skills.length; i++) {
   skillsList.appendChild(skill);
 }
 
-// ===== FOOTER SECTION =====
+// ===== MESSAGE SECTION =====
+const messageForm = document.forms["leave_message"];
 
+messageForm.addEventListener("submit", (event) => {
+  // Prevents automatic form submission and page reload so the form can be handled with custom code inside the event listener’s callback function.
+  event.preventDefault();
+
+  // Getting user's name, email and message values
+  const usersName = event.target.usersName.value;
+  const usersEmail = event.target.usersEmail.value;
+  const usersMessage = event.target.usersMessage.value;
+
+  console.log(usersName);
+  console.log(usersEmail);
+  console.log(usersMessage);
+
+  // Selecting the ul inside the messages section to display messages
+  const messagesSection = document.getElementById("messages");
+  const messageList = messagesSection.querySelector("ul");
+  messageList.classList.add("message-ul");
+
+  // Creating an li element for the user's message
+  const newMessage = document.createElement("li");
+  newMessage.classList.add("user-msg-li");
+  newMessage.innerHTML = `
+  <div class="user-info">
+    <a class="user-email" href="mailto:${usersEmail}">${usersName}</a>
+    <span class="user-msg" >${usersMessage}</span>
+  </div>
+  `;
+
+  // Creating the remove button for the messages section
+  const removeButton = document.createElement("button");
+  removeButton.setAttribute("type", "button");
+  removeButton.innerText = "Remove";
+  removeButton.classList.add("remove-btn");
+
+  // Appending the remove button to the message li
+  newMessage.appendChild(removeButton);
+  console.log(newMessage);
+
+  messagesSection.classList.remove("hidden");
+
+  messageList.appendChild(newMessage);
+
+  // Remove the message (entry) when clicking on the remove button
+  removeButton.addEventListener("click", () => {
+    const entry = removeButton.parentNode;
+    entry.remove();
+
+    //if no <li> elements remain within the <ul> element, the messagesSection (i.e. the "Messages" section title) will be hidden
+    if (messageList.children.length === 0) {
+      messagesSection.classList.add("hidden");
+    }
+  });
+  // Clearing the form so default placeholders appear again
+  messageForm.reset();
+});
+
+// ===== FOOTER SECTION =====
 // 1. CREATING THE FOOTER AND P TAGS
 const footer = document.createElement("footer");
 const copyright = document.createElement("p");
