@@ -1,5 +1,58 @@
 "use strict";
 
+// ===== PROJECTS SECTION =====
+// Error Modal for projects section
+const closeModal = document.getElementById("closeModal");
+const errorModal = document.getElementById("errorModal");
+
+closeModal.addEventListener("click", () => {
+  errorModal.classList.add("hidden-modal");
+});
+// end errorModal
+
+const projectSection = document.getElementById("projects");
+const projectList = projectSection.querySelector("ul");
+
+function fetchGithubProjects() {
+  fetch("https://api.github.com/users/codercreative/repos")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(response.status);
+      }
+      return response.json();
+    })
+    .then((repositories) => {
+      for (let i = 0; i < repositories.length; i++) {
+        if (
+          repositories[i].name === "codercreative" ||
+          repositories[i].name === "christina-kepler" ||
+          repositories[i].name === "github-repo-gallery"
+        ) {
+          //don't display
+          //1. codercreative needs to stay public in GitHub as it is my intro on my Github acount page
+          //2. No need to display my portfolio christina-kepler within my portfolio
+          //3. I want to keep github-repo-gallery public, but I don't want to display it in my portfolio
+          continue;
+        } else {
+          const project = document.createElement("li");
+          project.classList.add("project-li");
+          const link = document.createElement("a");
+          link.href = repositories[i].html_url;
+          link.innerText = repositories[i].name;
+          project.appendChild(link);
+          projectList.appendChild(project);
+        }
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      // adding error modal
+      errorModal.classList.remove("hidden-modal");
+    });
+}
+
+fetchGithubProjects();
+
 // ===== SKILLS SECTION =====
 
 // 1. STORING MY SKILLS IN AN ARRAY
@@ -31,10 +84,6 @@ messageForm.addEventListener("submit", (event) => {
   const usersEmail = event.target.usersEmail.value;
   const usersMessage = event.target.usersMessage.value;
 
-  console.log(usersName);
-  console.log(usersEmail);
-  console.log(usersMessage);
-
   // Selecting the ul inside the messages section to display messages
   const messagesSection = document.getElementById("messages");
   const messageList = messagesSection.querySelector("ul");
@@ -58,7 +107,6 @@ messageForm.addEventListener("submit", (event) => {
 
   // Appending the remove button to the message li
   newMessage.appendChild(removeButton);
-  console.log(newMessage);
 
   messagesSection.classList.remove("hidden");
 

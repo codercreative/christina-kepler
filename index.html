@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon-canva-64.png" />
+
     <!-- Poppins Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -141,10 +144,12 @@
           </div>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="projects">
           <h2>Projects</h2>
-          <!-- adding GitHub projects to the ul here via API call and JavaScript -->
-          <ul></ul>
+
+          <ul>
+            <!-- adding GitHub projects to the ul here via API call and JavaScript -->
+          </ul>
         </section>
 
         <section id="skills" class="skills">
@@ -152,6 +157,16 @@
           <!-- list of my skills dynamically inserted with JavaScript-->
           <ul></ul>
         </section>
+
+        <!-- Error modal if the Github projects do not load correctly-->
+
+        <div id="errorModal" class="error-modal hidden-modal">
+          <p class="modal-msg">
+            Oops! Projects could not be loaded. Please refresh the page or try
+            again later.
+          </p>
+          <button id="closeModal" class="modal-close-btn">Close</button>
+        </div>
 
         <section id="connect">
           <h2>Connect</h2>

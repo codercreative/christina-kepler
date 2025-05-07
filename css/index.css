@@ -148,7 +148,7 @@ Nav Bar
 
 .nav-list li a:hover {
   color: var(--orange);
-  border-bottom: 2px solid var(--orange);
+  border-bottom: 1px solid var(--orange);
 }
 
 .paper-plane-icon {
@@ -205,7 +205,78 @@ Experience Section
 /*  -------- 
 Projects Section  
 --------*/
-/* styling will be inserted later for the Projects section */
+
+.project-li {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--dark-mauve);
+  background-color: var(--white);
+  border: 2px solid transparent;
+}
+
+.project-li a {
+  display: block;
+  color: inherit;
+}
+
+.project-li:hover {
+  filter: contrast(110%);
+  border: 2px solid var(--orange);
+}
+
+.project-li a:hover {
+  color: var(--orange);
+}
+
+/* Projects error modal and overlay */
+
+.error-modal {
+  background-color: var(--orange);
+  border: 2px solid var(--orange);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-msg {
+  max-width: 70%;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--white);
+  filter: contrast(110%);
+}
+
+.modal-close-btn {
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  background-color: transparent;
+  color: var(--white);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in;
+}
+
+.modal-close-btn:hover {
+  border: 2px solid var(--almost-white);
+}
+
+.hidden-modal {
+  display: none;
+}
 
 /*  -------- 
 Skills Section 
@@ -306,6 +377,8 @@ Leave a Message Section
   font-size: inherit;
   font-family: inherit;
   margin-bottom: 10px;
+  border: 1px solid var(--dark-mauve);
+  border-radius: 5px;
 }
 
 .submit-btn {
@@ -344,9 +417,13 @@ Messages Section (displaying messages from users)
   background-color: var(--almost-white);
 }
 
+/* prevent users from resizing the textarea input field */
+textarea {
+  resize: none;
+}
+
 .user-msg-li {
   width: 100%;
-  border: 1px solid var(--dark-mauve);
   border-radius: 5px;
   margin-bottom: 20px;
   padding: 10px;
@@ -448,6 +525,13 @@ Media Queries
 
   #experience span {
     font-size: 1.1rem;
+  }
+
+  /* Projects Section */
+  #projects ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
   /* Skills Section */
@@ -618,19 +702,6 @@ Keyframes
     background-position: 100% 100%;
   }
 }
-
-/* @keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.9;
-  }
-
-  100% {
-    opacity: 1;
-  }
-} */
 
 @keyframes spin {
   from {
