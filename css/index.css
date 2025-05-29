@@ -342,7 +342,7 @@ Connect Section
 }
 .social-icons {
   display: flex;
-  gap: 1em;
+  gap: 1.5em;
 }
 
 .linkedin-icon,
@@ -548,7 +548,7 @@ Media Queries
 
   /* Connect Section */
   .social-icons {
-    width: 110px;
+    gap: 2.5em;
   }
 
   .linkedin-icon,
