@@ -9,7 +9,7 @@
 ## Live Site
 
 View the live project here:
-[Live Site]()
+[Live Site](https://codercreative.github.io/christina-kepler/)
 
 ## Intro to project
 
