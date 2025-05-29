@@ -1,5 +1,16 @@
 # christina-ligare-kepler
 
+## Preview
+
+<p>
+  <img src="images/screenshot.webp" alt="screenshot of project" width="100%">
+</p>
+
+## Live Site
+
+View the live project here:
+[Live Site]()
+
 ## Intro to project
 
 Portfolio project for "Intro to Programming" course with [Code the Dream](https://codethedream.org/)

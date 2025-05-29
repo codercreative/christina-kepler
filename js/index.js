@@ -39,6 +39,8 @@ function fetchGithubProjects() {
           const link = document.createElement("a");
           link.href = repositories[i].html_url;
           link.innerText = repositories[i].name;
+          // Make sure that the project repos are opened in a separate tab
+          link.setAttribute("target", "_blank");
           project.appendChild(link);
           projectList.appendChild(project);
         }
