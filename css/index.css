@@ -248,6 +248,7 @@ Projects Section
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .modal-msg {
@@ -341,19 +342,20 @@ Connect Section
 }
 .social-icons {
   display: flex;
-  width: 5em;
-  justify-content: space-between;
+  gap: 1em;
 }
 
 .linkedin-icon,
-.github-icon {
+.github-icon,
+.mail-icon {
   /* note have to use font-size instead of width */
   font-size: 2em;
   color: var(--dark-mauve);
 }
 
 .linkedin-icon:hover,
-.github-icon:hover {
+.github-icon:hover,
+.mail-icon:hover {
   color: var(--orange);
 }
 
@@ -550,7 +552,8 @@ Media Queries
   }
 
   .linkedin-icon,
-  .github-icon {
+  .github-icon,
+  .mail-icon {
     font-size: 2.4em;
   }
 
@@ -631,7 +634,7 @@ Messages Section (displaying messages from users)
   }
 
   .social-icons {
-    width: 140px;
+    width: 200px;
   }
 
   .art-portrait {
@@ -641,7 +644,8 @@ Messages Section (displaying messages from users)
 
   /* Connect Section */
   .linkedin-icon,
-  .github-icon {
+  .github-icon,
+  .mail-icon {
     font-size: 2.8em;
   }
 }
